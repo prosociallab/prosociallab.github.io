@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<h1 default = "page-title">Current Projects</h1>
+
+{{ content }}
+
+{$ include list_projects.html limit = 10 projects = site.categories.projects %}
+
+<h2 class = "page-title">Previous Projects</h2>
+
+{$ include list_projects.html limit=10 projects = site.categories.projects-archive %}
