@@ -1,0 +1,35 @@
+---
+layout: default
+baseurl: /publication
+title: Publication
+---
+
+{% assign publications = site.data.publication.publication %}
+
+<div class="container py-4">
+    <p style="font-size: 1.1rem; font-weight: 500 !important">PUBLICATION</p>
+    <div class="row mt-4">
+        {% for pub in publications %}
+        <div class="col-12">
+            <p class="mb-2" style="font-size: 1rem; font-weight: 400 !important;">{{ pub.title }}</p>
+            <p class="mb-2" style="font-size: .95rem; font-weight: 200 !important;">{{ pub.authors }}</p>
+            <p class="mb-2" style="font-size: .95rem; font-weight: 300 !important;">{{ pub.venue_short }}{%if pub.venue_long %}: {{ pub.venue_long }}{% endif %}</p>
+            {% if pub.award %}
+            <p class="mb-2" style="font-size: .95rem; font-weight: 300 !important;"><i class="fa-solid fa-medal"></i>&nbsp;&nbsp;{{ pub.award }}</p>
+            {% endif %}
+            <p style="font-size: .9rem; font-weight: 300 !important;">
+                {% if pub.pdf %}
+                <a href="{{ '/assets/pdf/publications/' | append: pub.pdf | relative_url }}"><i class="fa-solid fa-file"></i>&nbsp;&nbsp;PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                {% endif %}
+                {% if pub.video %}
+                <a href="{{ pub.video }}"><i class="fa-solid fa-play"></i>&nbsp;&nbsp;Video</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                {% endif %}
+                {% if pub.slides %}
+                <a href="{{ pub.slides }}"><i class="fa-solid fa-file-powerpoint"></i>&nbsp;&nbsp;Slides</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                {% endif %}
+            </p>
+            <hr>
+        </div>
+        {% endfor %}
+    </div>
+</div>
