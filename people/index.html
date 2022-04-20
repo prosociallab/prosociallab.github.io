@@ -4,108 +4,93 @@ baseurl: /people
 title: People
 ---
 
+{% assign counter = 0 %}
+{% assign color = '#9B2F7A, #379DD4, #61BA84, #E1B917' | split: ', ' %}
+
 <div class="container pt-4">
     <p style="font-size: 1.1rem; font-weight: 500 !important">FACULTY</p>
     <div class="row mt-4">
         <div class="col-6 col-lg-2 col-sm-4 align-self-center">
             <a href="https://faculty.washington.edu/garyhs/"><img src="{{ 'assets/images/people/gary.jpg' | relative_url }}" alt="" style="height: auto; width: 100%;"></a>
-            <div style="background-color: #9B2F7A">
+            {% assign idx = counter | modulo: 4 %}
+            <div style="{{ color[idx] | prepend: 'background-color: ' }}">
                 <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">Gary Hsieh</p>
                 <p style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem; text-align: left; color: white;">garyhs@uw.edu</p>
             </div>
+            {% assign counter = counter | plus: 1 %}
         </div>
     </div>
 </div>
+
 <div class="container pt-4">
     <p style="font-size: 1.1rem; font-weight: 500 !important">PH.D. STUDENTS</p>
     <div class="row mt-4">
-        <div class="col-6 col-lg-2 col-sm-4 align-self-center">
-            <img src="{{ 'assets/images/people/himanshu.jpg' | relative_url }}" alt="" style="height: auto; width: 100%;">
-            <div class="mb-3" style="background-color: #379DD4">
-                <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">Himanshu Zade</p>
-                <p style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem; text-align: left; color: white;">himanz@uw.edu</p>
+        {% for people_hash in site.data.people %}
+            {% assign person = people_hash[1] %}
+            {% if person.role == "phd" %}
+            <div class="col-6 col-lg-2 col-sm-4 align-self-center">
+                {% if person.website %}
+                <a href="{{ person.website }}"><img src="{{ 'assets/images/people/' | append: person.image | relative_url }}" alt="" style="height: auto; width: 100%;"></a>
+                {% else %}
+                <img src="{{ 'assets/images/people/' | append: person.image | relative_url }}" alt="" style="height: auto; width: 100%;">
+                {% endif %}
+                {% assign idx = counter | modulo: 4 %}
+                <div class="mb-3" style="{{ color[idx] | prepend: 'background-color: ' }}">
+                    <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">{{ person.name }}</p>
+                    <a href="{{ person.email | prepend: 'mailto:' }}" style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem !important; margin: 0 !important; color: white !important; display:inline-block;">{{ person.email }}</a>
+                </div>
+                {% assign counter = counter | plus: 1 %}
             </div>
-        </div>
-        <div class="col-6 col-lg-2 col-sm-4 align-self-center">
-            <img src="https://www.sprwilliams.com/me_website.jpg" alt="" style="height: auto; width: 100%;">
-            <div class="mb-3" style="background-color: #EF7B49">
-                <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">Spencer Williams</p>
-                <p style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem; text-align: left; color: white;">sw1918@uw.edu</p>
-            </div>
-        </div>
-        <div class="col-6 col-lg-2 col-sm-4 align-self-center">
-            <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=B1Ss_HgAAAAJ&citpid=1" alt="" style="height: auto; width: 100%;">
-            <div class="mb-3" style="background-color: #61BA84">
-                <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">Raina Langevin</p>
-                <p style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem; text-align: left; color: white;">rlangevi@uw.edu</p>
-            </div>
-        </div>
-        <div class="col-6 col-lg-2 col-sm-4 align-self-center">
-            <img src="{{ 'assets/images/people/keri.jpg' | relative_url }}" alt="" style="height: auto; width: 100%;">
-            <div class="mb-3" style="background-color: #E1B917">
-                <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">Keri Mallari</p>
-                <p style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem; text-align: left; color: white;">kmallari@uw.edu</p>
-            </div>
-        </div>
-        <div class="col-6 col-lg-2 col-sm-4 align-self-center">
-            <img src="{{ 'assets/images/people/donghoon.jpg' | relative_url }}" alt="" style="height: auto; width: 100%;">
-            <div class="mb-3" style="background-color: #9B2F7A">
-                <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">Donghoon Shin</p>
-                <p style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem; text-align: left; color: white;">dhoon@uw.edu</p>
-            </div>
-        </div>
+            {% endif %}
+        {% endfor %}
     </div>
 </div>
 <div class="container pt-4">
     <p style="font-size: 1.1rem; font-weight: 500 !important">MASTERS STUDENTS</p>
     <div class="row mt-4">
-        <div class="col-6 col-lg-2 col-sm-4 align-self-center">
-            <img src="https://dummyimage.com/1280/f2f2f2/000000.jpg&text=area+1" alt="" style="height: auto; width: 100%;">
-            <div class="mb-3" style="background-color: #EF7B49">
-                <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">Spencer Williams</p>
-                <p style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem; text-align: left; color: white;">dhoon@uw.edu</p>
+        {% assign masters = site.data.people %}
+        {% for people_hash in masters %}
+            {% assign person = people_hash[1] %}
+            {% if person.role == "masters" %}
+            <div class="col-6 col-lg-2 col-sm-4 align-self-center">
+                {% if person.website %}
+                <a href="{{ person.website }}"><img src="{{ 'assets/images/people/' | append: person.image | relative_url }}" alt="" style="height: auto; width: 100%;"></a>
+                {% else %}
+                <img src="{{ 'assets/images/people/' | append: person.image | relative_url }}" alt="" style="height: auto; width: 100%;">
+                {% endif %}
+                {% assign idx = counter | modulo: 4 %}
+                <div class="mb-3" style="{{ color[idx] | prepend: 'background-color: ' }}">
+                    <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">{{ person.name }}</p>
+                    <a href="{{ person.email | prepend: 'mailto:' }}" style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem !important; margin: 0 !important; color: white !important; display:inline-block;">{{ person.email }}</a>
+                </div>
+                {% assign counter = counter | plus: 1 %}
             </div>
-        </div>
-        <div class="col-6 col-lg-2 col-sm-4 align-self-center">
-            <img src="https://dummyimage.com/1280/f2f2f2/000000.jpg&text=area+1" alt="" style="height: auto; width: 100%;">
-            <div class="mb-3" style="background-color: #61BA84">
-                <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">Raina Langevin</p>
-                <p style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem; text-align: left; color: white;">dhoon@uw.edu</p>
-            </div>
-        </div>
-        <div class="col-6 col-lg-2 col-sm-4 align-self-center">
-            <img src="https://dummyimage.com/1280/f2f2f2/000000.jpg&text=area+1" alt="" style="height: auto; width: 100%;">
-            <div class="mb-3" style="background-color: #379DD4">
-                <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">Himanshu Zade</p>
-                <p style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem; text-align: left; color: white;">dhoon@uw.edu</p>
-            </div>
-        </div>
+            {% endif %}
+        {% endfor %}
     </div>
 </div>
 <div class="container pt-4">
     <p style="font-size: 1.1rem; font-weight: 500 !important">INTERNS</p>
     <div class="row mt-4">
-        <div class="col-6 col-lg-2 col-sm-4 align-self-center">
-            <img src="https://dummyimage.com/1280/f2f2f2/000000.jpg&text=area+1" alt="" style="height: auto; width: 100%;">
-            <div class="mb-3" style="background-color: #61BA84">
-                <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">Raina Langevin</p>
-                <p style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem; text-align: left; color: white;">dhoon@uw.edu</p>
+        {% assign interns = site.data.people %}
+        {% for people_hash in masters %}
+            {% assign person = people_hash[1] %}
+            {% if person.role == "intern" %}
+            <div class="col-6 col-lg-2 col-sm-4 align-self-center">
+                {% if person.website %}
+                <a href="{{ person.website }}"><img src="{{ 'assets/images/people/' | append: person.image | relative_url }}" alt="" style="height: auto; width: 100%;"></a>
+                {% else %}
+                <img src="{{ 'assets/images/people/' | append: person.image | relative_url }}" alt="" style="height: auto; width: 100%;">
+                {% endif %}
+                {% assign idx = counter | modulo: 4 %}
+                <div class="mb-3" style="{{ color[idx] | prepend: 'background-color: ' }}">
+                    <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">{{ person.name }}</p>
+                    <a href="{{ person.email | prepend: 'mailto:' }}" style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem !important; margin: 0 !important; color: white !important; display:inline-block;">{{ person.email }}</a>
+                </div>
+                {% assign counter = counter | plus: 1 %}
             </div>
-        </div>
-        <div class="col-6 col-lg-2 col-sm-4 align-self-center">
-            <img src="https://dummyimage.com/1280/f2f2f2/000000.jpg&text=area+1" alt="" style="height: auto; width: 100%;">
-            <div class="mb-3" style="background-color: #E1B917">
-                <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">Keri Mallari</p>
-                <p style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem; text-align: left; color: white;">dhoon@uw.edu</p>
-            </div>
-        </div>
-        <div class="col-6 col-lg-2 col-sm-4 align-self-center">
-            <img src="https://dummyimage.com/1280/f2f2f2/000000.jpg&text=area+1" alt="" style="height: auto; width: 100%;">
-            <div class="mb-3" style="background-color: #379DD4">
-                <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">Himanshu Zade</p>
-                <p style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem; text-align: left; color: white;">dhoon@uw.edu</p>
-            </div>
-        </div>
+            {% endif %}
+        {% endfor %}
     </div>
 </div>
 <div class="container py-4">
@@ -203,3 +188,7 @@ title: People
         </div>
     </div>
 </div>
+
+<style>
+
+</style>
