@@ -15,7 +15,7 @@ title: People
             {% assign idx = counter | modulo: 4 %}
             <div style="{{ color[idx] | prepend: 'background-color: ' }}">
                 <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">Gary Hsieh</p>
-                <p style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem; text-align: left; color: white;">garyhs@uw.edu</p>
+                <a href="mailto:garyhs@uw.edu" style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem !important; margin: 0 !important; color: white !important; display:inline-block;">garyhs@uw.edu</a>
             </div>
             {% assign counter = counter | plus: 1 %}
         </div>
