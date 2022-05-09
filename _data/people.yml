@@ -6,7 +6,7 @@ people:
         email: garyhs@uw.edu
         image: gary.jpg
         member_since: 2017
-  - type: "Ph.D. students"
+  - type: "Ph.D. Students"
     list:
       - name: Donghoon Shin
         website: https://donghoon.io
@@ -33,10 +33,17 @@ people:
         email: himanz@uw.edu
         image: himanshu.jpg
         member_since: 2016
-  - type: "Masters students"
+  - type: "Masters Students"
     list:
       - name: Masters 1
         website: https://google.com
         email: masters1@uw.edu
+        image: placeholder.jpg
+        member_since: 2022
+  - type: "Interns"
+    list:
+      - name: Intern 1
+        website: https://google.com
+        email: intern1@uw.edu
         image: placeholder.jpg
         member_since: 2022

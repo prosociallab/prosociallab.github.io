@@ -49,12 +49,15 @@ footer {
 a {
 	text-decoration: none !important;
 	color: #000 !important;
-	transition: color .15s ease-in-out;
-	-moz-transition: color .15s ease-in-out;
-	-webkit-transition: color .15s ease-in-out;
 }
 a:hover {
-	color: #9B2F7A !important;
+  font-weight: 500 !important;
+}
+.zoom {
+	transition: transform .2s;
+}
+.zoom:hover {
+  transform: scale(1.02); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
 p {

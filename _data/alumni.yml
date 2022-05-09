@@ -4,18 +4,22 @@ alumni:
       - name: Rafal Kocielnik
         affiliation: Caltech
         role: CI Fellow
+        website: https://rkocielnik.com/
         member_until: 2022
       - name: Lucas Colusso
         affiliation: BECU
         role: Senior UX Designer
+        website: https://lucascolusso.com/
         member_until: 2022
       - name: Elena Agapie
         affiliation: UC Irvine
         role: Assistant Professor
+        website: http://eagapie.com/
         member_until: 2022
       - name: Mia Minhyang Suh
         affiliation: Google
         role: UX Researcher
+        website: http://miasuh.info/
         member_until: 2022
   - type: "Masters Students"
     list:

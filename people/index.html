@@ -13,7 +13,7 @@ title: People
         <div class="row my-4">
             {% assign people = group.list | sort: "member_since" %}
             {% for person in people %}
-                <div class="col-6 col-lg-2 col-sm-4 align-self-center">
+                <div class="col-6 col-lg-2 col-sm-4 align-self-center zoom">
                     {% if person.website %}
                     <a href="{{ person.website }}"><img src="{{ 'assets/images/people/' | append: person.image | relative_url }}" alt="" style="height: auto; width: 100%;"></a>
                     {% else %}
@@ -39,10 +39,14 @@ title: People
         {% for person in people %}
         <div class="row">
             <div class="col-4 col-sm-2 align-self-center">
-                <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">{{ person.name }}</p>
+                {% if person.website %}
+                <a class="mt-1" style="font-size: 1rem; font-weight: 300;" href="{{ person.website }}">{{ person.name }}</a>
+                {% else %}
+                <p class="mt-1" style="font-size: 1rem; font-weight: 300;">{{ person.name }}</p>
+                {% endif %}
             </div>
             <div class="col-8 col-sm-10 align-self-center">
-                <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">now {{ person.role }} at {{ person.affiliation }}</p>
+                <p class="mt-1" style="font-size: 1rem; font-weight: 300;">now {{ person.role }} at {{ person.affiliation }}</p>
             </div>
         </div>
         {% endfor %}
