@@ -105,6 +105,11 @@ h4 {
 .nav-item {
 	padding-left: 0 !important;
 }
+.navbar-toggler {
+	border: none !important;
+	outline: none !important;
+	padding: 0 !important
+  }
 @media screen and (max-width: 575px) {
 	.padding-row {
 		padding-top: 1rem !important;
