@@ -8,187 +8,44 @@ title: People
 {% assign color = '#9B2F7A, #379DD4, #61BA84, #E1B917' | split: ', ' %}
 
 <div class="container pt-4">
-    <p style="font-size: 1.1rem; font-weight: 500 !important">FACULTY</p>
-    <div class="row mt-4">
-        <div class="col-6 col-lg-2 col-sm-4 align-self-center">
-            <a href="https://faculty.washington.edu/garyhs/"><img src="{{ 'assets/images/people/gary.jpg' | relative_url }}" alt="" style="height: auto; width: 100%;"></a>
-            {% assign idx = counter | modulo: 4 %}
-            <div style="{{ color[idx] | prepend: 'background-color: ' }}">
-                <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">Gary Hsieh</p>
-                <a href="mailto:garyhs@uw.edu" style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem !important; margin: 0 !important; color: white !important; display:inline-block;">garyhs@uw.edu</a>
-            </div>
-            {% assign counter = counter | plus: 1 %}
+    {% for group in site.data.people.people %}
+        <p style="font-size: 1.1rem; font-weight: 500 !important; text-transform: uppercase;">{{ group.type }}</p>
+        <div class="row my-4">
+            {% assign people = group.list | sort: "member_since" %}
+            {% for person in people %}
+                <div class="col-6 col-lg-2 col-sm-4 align-self-center">
+                    {% if person.website %}
+                    <a href="{{ person.website }}"><img src="{{ 'assets/images/people/' | append: person.image | relative_url }}" alt="" style="height: auto; width: 100%;"></a>
+                    {% else %}
+                    <img src="{{ 'assets/images/people/' | append: person.image | relative_url }}" alt="" style="height: auto; width: 100%;">
+                    {% endif %}
+                    {% assign idx = counter | modulo: 4 %}
+                    <div class="mb-3" style="{{ color[idx] | prepend: 'background-color: ' }}">
+                        <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">{{ person.name }}</p>
+                        <a href="{{ person.email | prepend: 'mailto:' }}" style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem !important; margin: 0 !important; color: white !important; display:inline-block;">{{ person.email }}</a>
+                    </div>
+                    {% assign counter = counter | plus: 1 %}
+                </div>
+            {% endfor %}
         </div>
-    </div>
+    {% endfor %}
 </div>
-
-<div class="container pt-4">
-    <p style="font-size: 1.1rem; font-weight: 500 !important">PH.D. STUDENTS</p>
-    <div class="row mt-4">
-        {% for people_hash in site.data.people %}
-            {% assign person = people_hash[1] %}
-            {% if person.role == "phd" %}
-            <div class="col-6 col-lg-2 col-sm-4 align-self-center">
-                {% if person.website %}
-                <a href="{{ person.website }}"><img src="{{ 'assets/images/people/' | append: person.image | relative_url }}" alt="" style="height: auto; width: 100%;"></a>
-                {% else %}
-                <img src="{{ 'assets/images/people/' | append: person.image | relative_url }}" alt="" style="height: auto; width: 100%;">
-                {% endif %}
-                {% assign idx = counter | modulo: 4 %}
-                <div class="mb-3" style="{{ color[idx] | prepend: 'background-color: ' }}">
-                    <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">{{ person.name }}</p>
-                    <a href="{{ person.email | prepend: 'mailto:' }}" style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem !important; margin: 0 !important; color: white !important; display:inline-block;">{{ person.email }}</a>
-                </div>
-                {% assign counter = counter | plus: 1 %}
-            </div>
-            {% endif %}
-        {% endfor %}
-    </div>
-</div>
-<div class="container pt-4">
-    <p style="font-size: 1.1rem; font-weight: 500 !important">MASTERS STUDENTS</p>
-    <div class="row mt-4">
-        {% assign masters = site.data.people %}
-        {% for people_hash in masters %}
-            {% assign person = people_hash[1] %}
-            {% if person.role == "masters" %}
-            <div class="col-6 col-lg-2 col-sm-4 align-self-center">
-                {% if person.website %}
-                <a href="{{ person.website }}"><img src="{{ 'assets/images/people/' | append: person.image | relative_url }}" alt="" style="height: auto; width: 100%;"></a>
-                {% else %}
-                <img src="{{ 'assets/images/people/' | append: person.image | relative_url }}" alt="" style="height: auto; width: 100%;">
-                {% endif %}
-                {% assign idx = counter | modulo: 4 %}
-                <div class="mb-3" style="{{ color[idx] | prepend: 'background-color: ' }}">
-                    <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">{{ person.name }}</p>
-                    <a href="{{ person.email | prepend: 'mailto:' }}" style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem !important; margin: 0 !important; color: white !important; display:inline-block;">{{ person.email }}</a>
-                </div>
-                {% assign counter = counter | plus: 1 %}
-            </div>
-            {% endif %}
-        {% endfor %}
-    </div>
-</div>
-<div class="container pt-4">
-    <p style="font-size: 1.1rem; font-weight: 500 !important">INTERNS</p>
-    <div class="row mt-4">
-        {% assign interns = site.data.people %}
-        {% for people_hash in masters %}
-            {% assign person = people_hash[1] %}
-            {% if person.role == "intern" %}
-            <div class="col-6 col-lg-2 col-sm-4 align-self-center">
-                {% if person.website %}
-                <a href="{{ person.website }}"><img src="{{ 'assets/images/people/' | append: person.image | relative_url }}" alt="" style="height: auto; width: 100%;"></a>
-                {% else %}
-                <img src="{{ 'assets/images/people/' | append: person.image | relative_url }}" alt="" style="height: auto; width: 100%;">
-                {% endif %}
-                {% assign idx = counter | modulo: 4 %}
-                <div class="mb-3" style="{{ color[idx] | prepend: 'background-color: ' }}">
-                    <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">{{ person.name }}</p>
-                    <a href="{{ person.email | prepend: 'mailto:' }}" style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem !important; margin: 0 !important; color: white !important; display:inline-block;">{{ person.email }}</a>
-                </div>
-                {% assign counter = counter | plus: 1 %}
-            </div>
-            {% endif %}
-        {% endfor %}
-    </div>
-</div>
-<div class="container py-4">
+<div class="container pb-4">
     <p style="font-size: 1.1rem; font-weight: 500 !important">ALUMNI</p>
-    <p class="mt-3 mb-1" style="font-size: 1rem; font-weight: 500 !important">Ph.D. Student</p>
+    {% for group in site.data.alumni.alumni %}
+    <p class="mt-3 mb-1" style="font-size: 1rem; font-weight: 500 !important">{{ group.type }}</p>
+    {% assign people = group.list | sort: "member_since" %}
     <div class="mb-4">
+        {% for person in people %}
         <div class="row">
             <div class="col-4 col-sm-2 align-self-center">
-                <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">Rafal Kocielnik</p>
+                <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">{{ person.name }}</p>
             </div>
             <div class="col-8 col-sm-10 align-self-center">
-                <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">now CI Fellow at Caltech</p>
+                <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">now {{ person.role }} at {{ person.affiliation }}</p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-4 col-sm-2 align-self-center">
-                <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">Lucas Colusso</p>
-            </div>
-            <div class="col-8 col-sm-10 align-self-center">
-                <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">now Senior UX Designer at BECU</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 col-sm-2 align-self-center">
-                <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">Elena Agapie</p>
-            </div>
-            <div class="col-8 col-sm-10 align-self-center">
-                <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">now Assistant Professor at UC Irvine</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 col-sm-2 align-self-center">
-                <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">Mia Minhyang Suh</p>
-            </div>
-            <div class="col-8 col-sm-10 align-self-center">
-                <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">now UX Researcher at Google</p>
-            </div>
-        </div>
+        {% endfor %}
     </div>
-    <p class="mb-1" style="font-size: 1rem; font-weight: 500 !important">Masters Student</p>
-    <div class="row">
-        <div class="col-4 col-sm-2 align-self-center">
-            <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">Kerem Özcan</p>
-        </div>
-        <div class="col-8 col-sm-10 align-self-center">
-            <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">now Product Analyst at Uber</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-4 col-sm-2 align-self-center">
-            <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">Lillian Xiao</p>
-        </div>
-        <div class="col-8 col-sm-10 align-self-center">
-            <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">now UX Designer at VW</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-4 col-sm-2 align-self-center">
-            <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">Lily Lei</p>
-        </div>
-        <div class="col-8 col-sm-10 align-self-center">
-            <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">now Co-Founder at August Sage</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-4 col-sm-2 align-self-center">
-            <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">David Wang</p>
-        </div>
-        <div class="col-8 col-sm-10 align-self-center">
-            <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">now Engineer at Google</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-4 col-sm-2 align-self-center">
-            <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">Karan Gupta</p>
-        </div>
-        <div class="col-8 col-sm-10 align-self-center">
-            <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">now Designer at Google India</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-4 col-sm-2 align-self-center">
-            <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">Siddhartha Gudipati</p>
-        </div>
-        <div class="col-8 col-sm-10 align-self-center">
-            <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">now Senior Interaction Designer at Google</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-4 col-sm-2 align-self-center">
-            <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">Nicolas Friederici</p>
-        </div>
-        <div class="col-8 col-sm-10 align-self-center">
-            <p class="mt-1" style="font-size: 1rem; font-weight: 300 !important;">now Senior Researcher at HIIG</p>
-        </div>
-    </div>
+    {% endfor %}
 </div>
-
-<style>
-
-</style>
