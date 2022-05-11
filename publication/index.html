@@ -5,23 +5,55 @@ title: Publication
 ---
 
 {% assign publications = site.data.publication.publication %}
+{% assign category = site.data.publication-category %}
+
+<style>
+    [type=radio] {
+        display: none !important;
+    }
+  {% for type in category.types %}
+  #tag-{{ type | replace: ' ', '' }}:checked ~ .tag-label#label-{{ type | replace: ' ', '' }},
+  {% endfor %}
+  #tag-all:checked ~ .tag-label#label-all {
+    text-decoration: underline;
+    font-weight: 500;
+  }
+
+
+  {% for type in category.types %}
+  #tag-all:checked ~ #publications > #{{ type | replace: ' ', '' }} > .item:not(.item), #publications > .div:not(.div) {
+    display: none !important;
+  }
+  #tag-{{ type | replace: ' ', '' }}:checked ~ #publications > .div:not(.{{ type | replace: ' ', '' }}) {
+    display: none !important;
+  }
+  {% endfor %}
+
+  {% for type in category.types %}
+  #tag-{{ type | replace: ' ', '' }}:checked ~ #publications > .item:not(.tag-{{ type | replace: ' ', '' }}) {
+    display: none !important;
+  }
+  {% endfor %}
+</style>
 
 <div class="container py-4">
-    <div class="row">
+    <div class="row pb-3">
         <div class="col-md-4">
             <p style="font-size: 1.1rem; font-weight: 500 !important">PUBLICATION</p>
         </div>
-        <div class="col-md-8 text-right">
-            <a href="" style="font-weight: 500; font-size: .95rem !important; text-decoration: underline !important;">All</a>
-            <a href="" style="font-size: .95rem !important" class="ml-3">Behavior change</a>
-            <a href="" style="font-size: .95rem !important" class="ml-3">CAs</a>
-            <a href="" style="font-size: .95rem !important" class="ml-3">Reflection</a>
-            <a href="" style="font-size: .95rem !important" class="ml-3">Transitional research</a>
-        </div>
     </div>
-    <div class="row mt-4">
+    <input type="radio" name="tag" id="tag-all" aria-labelledby="tag-all" checked>
+    {% for cat in category.types %}
+    <input type="radio" name="tag" id="tag-{{ cat | replace: ' ', '' }}" aria-labelledby="tag-{{ cat | replace: ' ', '' }}">
+    {% endfor %}
+  
+    <label style="font-size: .95rem !important; cursor: pointer" for="tag-all" class="tag-label tag-all" id="label-all">All</label>
+    {% for cat in category.types %}
+    <label style="font-size: .95rem !important; cursor: pointer" for="tag-{{ cat | replace: ' ', '' }}" class="ml-3 tag-label tag-{{ cat | replace: ' ', '' }}" id="label-{{ cat | replace: ' ', '' }}">{{ cat }}</label>
+    {% endfor %}
+    <div class="row mt-4" id="publications">
         {% for pub in publications %}
-        <div class="col-12">
+        <div class="item col-12 {% if pub.category %}tag-{{ pub.category | replace: ' ', '' }}{% endif %}">
             <p class="mb-2" style="font-size: 1rem; font-weight: 400 !important;">{{ pub.title }}</p>
             <p class="mb-2" style="font-size: .95rem; font-weight: 200 !important;">{{ pub.authors }}</p>
             <p class="mb-2" style="font-size: .95rem; font-weight: 300 !important;">{{ pub.venue_short }}{%if pub.venue_long %}: {{ pub.venue_long }}{% endif %}</p>
