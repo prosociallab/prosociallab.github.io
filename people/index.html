@@ -9,7 +9,7 @@ title: People
 
 <div class="container pt-4">
     {% for group in site.data.people.people %}
-        <p style="font-size: 1.1rem; font-weight: 500 !important; text-transform: uppercase;">{{ group.type }}</p>
+        <p style="font-weight: 500 !important; text-transform: uppercase;">{{ group.type }}</p>
         <div class="row my-4">
             {% assign people = group.list | sort: "member_since" %}
             {% for person in people %}

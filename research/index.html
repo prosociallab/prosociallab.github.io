@@ -6,13 +6,13 @@ title: Research area
 {% assign areas = site.data.research-area.area %}
 
 <div class="container py-4">
-    <p style="font-size: 1.1rem; font-weight: 500 !important">RESEARCH AREA</p>
+    <p style="font-weight: 500 !important; text-transform: uppercase;">Research area</p>
     {% for area in areas %}
     {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
     {% if thecycle == 'odd' %}
     <div class="row mt-5">
         <div class="col-12 col-md-4 mb-3 mb-md-0 align-self-center">
-            <img src="{{ '/assets/images/main/research_area/' | append: area.image | relative_url }}" alt="" style="height: auto; width: 100%;">
+            <img src="{{ '/assets/images/research_area/' | append: area.image | relative_url }}" alt="" style="height: auto; width: 100%;">
         </div>
         <div class="col-12 col-md-8 mb-3 mb-md-0 align-self-center">
             <p class="mt-2" style="font-size: 1rem; font-weight: 500 !important;">{{ area.title }}</p>
@@ -23,7 +23,7 @@ title: Research area
     {% else %}
     <div class="row mt-5">
         <div class="col-12 col-md-4 mb-3 mb-md-0 order-md-2 align-self-center">
-            <img src="{{ '/assets/images/main/research_area/' | append: area.image | relative_url }}" alt="" style="height: auto; width: 100%;">
+            <img src="{{ '/assets/images/research_area/' | append: area.image | relative_url }}" alt="" style="height: auto; width: 100%;">
         </div>
         <div class="col-12 col-md-8 mb-3 mb-md-0 order-md-1 align-self-center">
             <p class="mt-2" style="font-size: 1rem; font-weight: 500 !important;">{{ area.title }}</p>

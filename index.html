@@ -9,7 +9,7 @@ title: UW Prosocial Computing Group
 <div class="container py-3">
     <div class="row">
         <div class="col-12 col-md-4 align-self-center mb-4 mb-md-0">
-            <img src="{{ '/assets/images/group-paintball.jpg' | relative_url }}" alt="" style="height: auto; width: 100%;">
+            <img src="{{ '/assets/images/main/group-paintball.jpg' | relative_url }}" alt="" style="height: auto; width: 100%;">
             <p class="mt-2" style="font-size: 0.8rem; font-weight: 400 !important; text-align: center;">A post-paintball group moment (April 2022)</p>
         </div>
         <div class="col-12 col-md-8 align-self-center">
@@ -19,12 +19,12 @@ title: UW Prosocial Computing Group
     </div>
 </div>
 <div class="container">
-    <p style="font-size: 1.1rem; font-weight: 500 !important">RESEARCH AREA</p>
+    <p style="font-weight: 500 !important; text-transform: uppercase;">Research area</p>
     <div class="row mt-4">
         {% for area in areas limit: 4 %}
         <div class="col-6 col-md-3 mb-3 mb-md-0 align-self-center">
-            <img src="{{ '/assets/images/main/research_area/' | append: area.image | relative_url }}" alt="" style="height: auto; width: 100%;">
-            <p class="mt-1 md-mt-2" style="font-size: .95rem; font-weight: 400 !important; text-align: center;">{{ area.title }}</p>
+            <img src="{{ '/assets/images/research_area/' | append: area.image | relative_url }}" alt="" style="height: auto; width: 100%;">
+            <p class="mt-1 mt-md-2" style="font-size: .95rem; font-weight: 400 !important; text-align: center;">{{ area.title }}</p>
         </div>
         {% endfor %}
     </div>
@@ -33,7 +33,7 @@ title: UW Prosocial Computing Group
     </div>
 </div>
 <div class="container pb-5">
-    <p style="font-size: 1.1rem; font-weight: 500 !important">NEWS</p>
+    <p style="font-weight: 500 !important; text-transform: uppercase;">News</p>
     <div class="row mt-4">
         {% for new in news limit: 8 %}
         <div class="col-12 col-sm-6">
