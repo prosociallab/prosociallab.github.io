@@ -1,9 +1,9 @@
 # Prosocial Lab Website
-This is a website for Prosical Lab at the University of Washington
+This repository contains the codebase of Prosocial Lab website
 
 ## Adding contents
 
-> Note: Be careful to indent while adding your contents into `.yml` file properly
+> Note: Be careful to indent properly while adding your contents into `.yml` file
 
 ### Adding a member
 1. Save you photo (200px*200px .jpg file recommended) in `/assets/images/people/`
