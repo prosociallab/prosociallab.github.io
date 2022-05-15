@@ -1,15 +1,28 @@
 # Prosocial Lab Website
-This is a website for Prosical Lab at the University of Washington
+This repository contains the codebase of Prosocial Lab website
 
 ## Adding contents
 
-### Adding a member (in progreess)
-1. Save you photo (200px*200px, jpg recommended) in `/assets/images/people/`
-2. Go to `/_data/people/{your role}/` and add your name, email address, filename of your photo (from step 1), and your website url (if applicable)
+> Note: Be careful to indent properly while adding your contents into `.yml` file
 
-### Adding a publication (in progreess)
+### Adding a member
+1. Save you photo (200px*200px .jpg file recommended) in `/assets/images/people/`
+2. Go to `/_data/people.yml` file
+3. Add your name, email address, filename of your photo (from step 1 - e.g., "donghoon.jpg"), starting year of your degree, and your website url (if applicable) under your role (faculty, phd, masters, or intern)
+
+### Adding an alumni member
+1. Go to `/_data/alumni.yml` file
+2. Add your name, affiliation, role (of your current affiliation), end of your degree, and your website url (if applicable) under your previous role (faculty, phd, masters, or intern)
+
+### Adding a publication
 1. Save publication pdf in `/assets/pdf/publications/` (and slides, if applicable)
-2. Go to `/_data/publication.yml/` and add its title, authors, filename of the pdf (from step 1), and any materials (slide - put its name here, presentation video)
+2. Go to `/_data/publication.yml` file
+3. Add its title, authors, filename of the pdf (from step 1), category (one among `Behavior change`, `CAs`, `Reflection`, and `Transitional research` - case sensitive), and any additional materials (slide: put its filename here, presentation video: put its YouTube link)
+
+### Adding a research area
+1. Save relevant image in `/assets/images/research_area/`
+2. Go to `/_data/research-area.yml` file
+3. Add its title, description, and filename of the image (from step 1). Note that main page only shows up first four areas
 
 ## Test & Deploy
 
