@@ -22,7 +22,12 @@ title: People
                     {% assign idx = counter | modulo: 4 %}
                     <div class="mb-3" style="{{ color[idx] | prepend: 'background-color: ' }}">
                         <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">{{ person.name }}</p>
-                        <a href="{{ person.email | prepend: 'mailto:' }}" style="font-size: .8rem; font-weight: 100 !important; padding: 0 .5rem .75rem .75rem !important; margin: 0 !important; color: white !important; display:inline-block;">{{ person.email }}</a>
+                        {% assign email = person.email | split: "@" %}
+                        <a href="#" class="cryptedmail"
+                            data-name="{{ email[0] }}"
+                            data-domain="{{ email[1] }}"
+                            onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain; return false;">
+                        </a>
                     </div>
                     {% assign counter = counter | plus: 1 %}
                 </div>
@@ -53,3 +58,17 @@ title: People
     </div>
     {% endfor %}
 </div>
+
+<style>
+    .cryptedmail {
+        font-size: .8rem;
+        font-weight: 100 !important;
+        padding: 0 .5rem .75rem .75rem !important;
+        margin: 0 !important;
+        color: white !important;
+        display:inline-block;
+    }
+    .cryptedmail:after {
+        content: attr(data-name) "@" attr(data-domain)
+    }
+</style>
