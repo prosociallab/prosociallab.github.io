@@ -84,6 +84,7 @@ h4 {
 
 .container {
 	margin-bottom: 2rem;
+	max-width: none !important;
 }
 
 .container:last-of-type {
