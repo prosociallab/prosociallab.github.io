@@ -1,28 +1,37 @@
 alumni:
   - type: "Ph.D. Students"
     list:
+      - name: Ravi Karkar
+        affiliation: UMass Amhearst
+        role: Assistant Professor
+        website: http://ravikarkar.com/
+        member_until: 2022
       - name: Rafal Kocielnik
         affiliation: Caltech
         role: CI Fellow
         website: https://rkocielnik.com/
-        member_until: 2022
+        member_until: 2021
       - name: Lucas Colusso
         affiliation: BECU
         role: Senior UX Designer
         website: https://lucascolusso.com/
-        member_until: 2022
+        member_until: 2020
       - name: Elena Agapie
         affiliation: UC Irvine
         role: Assistant Professor
         website: http://eagapie.com/
-        member_until: 2022
+        member_until: 2020
       - name: Mia Minhyang Suh
         affiliation: Google
         role: UX Researcher
         website: http://miasuh.info/
-        member_until: 2022
+        member_until: 2020
   - type: "Masters Students"
     list:
+      - name: Yennee Chew
+        affiliation: Big x Reality
+        role: Design Manager
+        member_until: 2022
       - name: Kerem Özcan
         affiliation: Uber
         role: Product Analyst

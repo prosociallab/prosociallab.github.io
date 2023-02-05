@@ -38,17 +38,13 @@ people:
         email: himanz@uw.edu
         image: himanshu.jpg
         member_since: 2016
-  - type: "Masters Students"
-    list:
-      - name: Masters 1
-        website: https://google.com
-        email: masters1@uw.edu
-        image: placeholder.jpg
-        member_since: 2022
-  - type: "Interns"
-    list:
-      - name: Intern 1
-        website: https://google.com
-        email: intern1@uw.edu
-        image: placeholder.jpg
-        member_since: 2022
+      - name: Lubna Razaq
+        website: https://www.linkedin.com/in/lubna-razaq-4517744b/
+        email: lubnar@uw.edu
+        image: lubna.jpg
+        member_since: 2020
+      - name: Ruican Zhong
+        website: https://ruican-zhong.netlify.app/
+        email: rzhong98@uw.edu
+        image: ruican.jpg
+        member_since: 2021
