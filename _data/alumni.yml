@@ -1,6 +1,16 @@
 alumni:
-  - type: "Ph.D. Students"
+  - type: "Ph.D. Students & Postdocs"
     list:
+      - name: Raina Langevin
+        affiliation: UW BIME
+        role: Postdoctoral Fellow
+        website: https://www.rainalangevin.com/
+        member_until: 2023
+      - name: Spencer Williams
+        affiliation: UW iSchool
+        role: Assistant Teaching Professor
+        website: https://www.sprwilliams.com/
+        member_until: 2023
       - name: Ravi Karkar
         affiliation: UMass Amhearst
         role: Assistant Professor
@@ -12,8 +22,8 @@ alumni:
         website: https://rkocielnik.com/
         member_until: 2021
       - name: Lucas Colusso
-        affiliation: BECU
-        role: Senior UX Designer
+        affiliation: Microsoft
+        role: Product Designer
         website: https://lucascolusso.com/
         member_until: 2020
       - name: Elena Agapie

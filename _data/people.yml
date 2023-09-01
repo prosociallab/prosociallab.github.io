@@ -8,11 +8,21 @@ people:
         member_since: 2017
   - type: "Ph.D. Students"
     list:
+      - name: Hyeonjeong Byeon
+        website: https://www.linkedin.com/in/hyeonjeong-byeon/
+        email: hjbyeon@uw.edu
+        image: hyeonjeong.jpg
+        member_since: 2023
       - name: Donghoon Shin
         website: https://donghoon.io
         email: dhoon@uw.edu
         image: donghoon.jpg
         member_since: 2022
+      - name: Ruican Zhong
+        website: https://ruican-zhong.netlify.app/
+        email: rzhong98@uw.edu
+        image: ruican.jpg
+        member_since: 2021
       - name: Ruoxi Shang
         website: https://ruoxishang.com/
         email: rxshang@uw.edu
@@ -23,28 +33,3 @@ people:
         email: kmallari@uw.edu
         image: keri.jpg
         member_since: 2019
-      - name: Raina Langevin
-        website: https://www.rainalangevin.com/
-        email: rlangevi@uw.edu
-        image: raina.jpg
-        member_since: 2018
-      - name: Spencer Williams
-        website: https://www.sprwilliams.com/
-        email: sw1918@uw.edu
-        image: spencer.jpg
-        member_since: 2018
-      - name: Himanshu Zade
-        website: https://students.washington.edu/himanz/
-        email: himanz@uw.edu
-        image: himanshu.jpg
-        member_since: 2016
-      - name: Lubna Razaq
-        website: https://www.linkedin.com/in/lubna-razaq-4517744b/
-        email: lubnar@uw.edu
-        image: lubna.jpg
-        member_since: 2020
-      - name: Ruican Zhong
-        website: https://ruican-zhong.netlify.app/
-        email: rzhong98@uw.edu
-        image: ruican.jpg
-        member_since: 2021
