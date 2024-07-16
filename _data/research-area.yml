@@ -5,9 +5,12 @@ area:
   - title: "Conversational agents"
     description: "Conversational agent may take various forms such as chatbots, virtual assistants, and voice-activated personal assistants. The goal of conversational agents is to provide users with a more natural and intuitive way of communicating with technology. We aim to design conversational agents that are able to understand and respond to human language, emotions, and context to provide personalized and effective interactions."
     image: "conversational_agents.jpg"
-  - title: "Reflection"
-    description: Reflection is the process of examining one's own experiences and thoughts about technology use. It involves considering the impact of technology on one's behavior, emotions, and relationships, as well as evaluating one's own beliefs and values. We aim to design technology that not only provides functional benefits but also promotes reflection and self-awareness. This can be achieved through the use of reflective interfaces, prompts for self-reflection, and the provision of data on technology use.
-    image: "reflection.jpg"
+  - title: "Generative AI"
+    description: Generative AI refers to AI systems capable of creating new content, such as text, images, music, or even complex designs, by learning patterns and structures from existing data. These models can generate human-like text, produce artistic images, or compose music by understanding and emulating the styles found in their training data. We aim to build a system that harnesses generative AI to enable various translational and social computing works. This involves leveraging AI's creative capabilities to facilitate communication, collaboration, and the translation of ideas across different contexts, ultimately fostering innovative solutions and enhancing social interactions.
+    image: "generative_ai.jpg"
   - title: "Translational research"
     description: "Translational science refers to the process of applying knowledge and theories from basic science research to practical problems in HCI and vice versa. The goal of translational science is to bridge the gap between fundamental research and practical applications in HCI. This involves taking concepts, theories, and technologies developed in basic science and adapting them for use in HCI, as well as taking insights from HCI and feeding them back into basic science research."
     image: "translational_comm_research.jpg"
+  - title: "Reflection"
+    description: Reflection is the process of examining one's own experiences and thoughts about technology use. It involves considering the impact of technology on one's behavior, emotions, and relationships, as well as evaluating one's own beliefs and values. We aim to design technology that not only provides functional benefits but also promotes reflection and self-awareness. This can be achieved through the use of reflective interfaces, prompts for self-reflection, and the provision of data on technology use.
+    image: "reflection.jpg"
