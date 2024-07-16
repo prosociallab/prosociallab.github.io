@@ -28,8 +28,10 @@ people:
         email: rxshang@uw.edu
         image: anna.jpg
         member_since: 2020
-      - name: Keri Mallari
-        website: https://www.keri.xyz/
-        email: kmallari@uw.edu
-        image: keri.jpg
-        member_since: 2019
+  - type: "Undergraduate Students"
+    list:
+      - name: Tony Zhou
+        website: https://tyzhou.com/
+        email: tyzhou05@uw.edu
+        image: tony.jpg
+        member_since: 2024
