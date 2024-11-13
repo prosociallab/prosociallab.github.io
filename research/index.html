@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Research area
+title: Research areas
 ---
 
 {% assign areas = site.data.research-area.area %}
 
 <div class="container py-4">
-    <p style="font-weight: 500 !important; text-transform: uppercase;">Research area</p>
+    <p style="font-weight: 500 !important; text-transform: uppercase;">Research areas</p>
     {% for area in areas %}
     {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
     {% if thecycle == 'odd' %}

@@ -28,8 +28,13 @@ people:
         email: rxshang@uw.edu
         image: anna.jpg
         member_since: 2020
-  - type: "Undergraduate Students"
+  - type: "Masters & Undergraduate Students"
     list:
+      - name: Alex Chen
+        website: https://www.byalexchen.com
+        email: alextyc@uw.edu
+        image: alex.jpg
+        member_since: 2024
       - name: Tony Zhou
         website: https://tyzhou.com/
         email: tyzhou05@uw.edu

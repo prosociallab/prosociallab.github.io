@@ -1,4 +1,10 @@
 list: # format date as dd/mm/yyyy
+  - title: "Received a Google Academic Research Award"
+    date: "18/10/2024" # DD/MM/YYYY
+    description: "Award titled: 'Combating Health Misinformation with LLM-Powered Living Summaries'"
+  - title: "Received a Microsoft New Future of Work Award"
+    date: "13/06/2024" # DD/MM/YYYY
+    description: "Award titled: 'Accelerating Research Translation into Design Practice Using Generative AI'"
   - title: "Two CHI papers accepted"
     date: "21/01/2024" # DD/MM/YYYY
     description: "Prosocial computing lab will present two CHI papers this year."
