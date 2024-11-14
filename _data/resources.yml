@@ -13,7 +13,7 @@ resource:
     image: "BCDS_small.jpg"
   - title: "Paper 2 Card: Translating academic insights into design cards"
     contributors : "Donghoon Shin, Gary Hsieh"
-    description: "Behavior change is the process of modifying an individual's behavior in a deliberate and lasting way through the use of technology. This could include anything from encouraging physical activity through wearable devices to encouraging a certain behavior change through social interactions. We aim to design technology that not only improves user experience but also promotes desirable changes in behavior."
+    description: "Academic papers are hard to read. But they often contain valuable insights that can help with many aspects of design. Harnessing the power of generative AI, we developed a tool that can help designers take any academic paper and translate it into more usable/understandable content in the form of design cards. "
     category: "CAs"
     project_path: "Paper2Card"
     image: "BCDS_small.jpg"
