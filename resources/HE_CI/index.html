@@ -1,0 +1,185 @@
+---
+layout: default
+title: Design Resources
+---
+
+{% assign resources = site.data.resources.resource %}
+
+<div class="container py-4">
+    <div class="row my-4 justify-content-center">
+        <div class="col-lg-8 col-sm-12 col-md-10">
+            <p style="font-weight: 500 !important; text-transform: uppercase;">Heuristic evaluation of conversational interfaces (& chatbots)</p>
+            A set of heuristics for evaluating conversational interfaces
+        </div>
+        <div class="col-lg-8 col-sm-12 col-md-10 my-4">
+            <img src="/assets/images/resources/BCDS.jpg" style='height: 100%; width: 100%; object-fit: contain'>
+        </div>     
+        <div class="col-lg-8 col-sm-12 col-md-10 mt-2">
+            We developed a set of heuristics for evaluating chatbots and conversational user interfaces. This method is inspired by a commonly used user interface evaluation techniqued, called <a href="https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/">Heuristic Evaluation</a> and has been iteratively developed through multiple rounds of users study. Our <a href="{{ '/assets/pdf/publications/langevin-CHI2021-caheuristics.pdf' | relative_url }}">paper</a> received a best paper award at the ACM Conference on Human Factors in Computing Systems</a>. 
+        </div>
+    </div>     
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-sm-12 col-md-10">
+            <a href="https://medium.com/@garyhsieh/how-to-evaluate-chatbots-and-conversational-user-interfaces-with-heuristics-d9c46eda14cb">Read our Medium Post on how to evaluate conversational interfaces</a>        
+        </div>
+    </div>
+    <div class="row mt-4 justify-content-center">
+        <div class="col-lg-8 col-sm-12 col-md-10 mt-4">
+            <p style="font-weight: 500 !important; text-transform: uppercase;">List of Heuristics</p>
+            <a href="#CI-H1">CI-H1. Visibility of system status</a><br>
+            <a href="#CI-H2">CI-H2. Match between system and the real world</a><br>
+            <a href="#CI-H3">CI-H3. User control and freedom</a><br>
+            <a href="#CI-H4">CI-H4. Consistency and standards</a><br>
+            <a href="#CI-H5">CI-H5. Error prevention</a><br>
+            <a href="#CI-H6">CI-H6. Help and guidance</a><br>
+            <a href="#CI-H7">CI-H7. Flexibility and efficiency of use</a><br>
+            <a href="#CI-H8">CI-H8. Aesthetic, minimalist and engaging design</a><br>
+            <a href="#CI-H9">CI-H9. Help users recognize, diagnose and recover from errors</a><br>
+            <a href="#CI-H10">CI-H10. Context preservation</a><br>
+            <a href="#CI-H11">CI-H11. Trustworthiness</a><br>
+        </div>
+    </div>
+
+    <div class="row mt-4 justify-content-center" id="CI-H1">
+        <div class="col-lg-8 col-sm-12 col-md-10 mt-4">
+            <p style="font-weight: 500 !important; text-transform: uppercase;">CI-H1. Visibility of system status</p>
+            <p>The system should always keep users informed about what is going on, through appropriate feed-back within reasonable time, without overwhelming the user.</p>
+
+            <p>Example heuristic violations:</p>
+            <ul>
+                <li>For a CUI designed to ask a bunch of questions, if there is no feedback on how far along the user is in the questionnaire.</li>
+                <li>For a voice-based CUI, when it isn’t clear to the user if they are in a particular state.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row mt-4 justify-content-center" id="CI-H2">
+        <div class="col-lg-8 col-sm-12 col-md-10 mt-4">
+            <p style="font-weight: 500 !important; text-transform: uppercase;">CI-H2. Match between system and the real world</p>
+            <p>The system should always keep users informed about what is going on, through appropriate feed-back within reasonable time, without overwhelming the user.</p>
+
+            <p>Example heuristic violations:</p>
+            <ul>
+                <li>If the CUI uses words or terms that are unfamiliar to the users.</li>
+                <li>If the CUI speaks in an unnatural way.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row mt-4 justify-content-center" id="CI-H3">
+        <div class="col-lg-8 col-sm-12 col-md-10 mt-4">
+            <p style="font-weight: 500 !important; text-transform: uppercase;">CI-H3. User control and freedom</p>
+            <p>Users often choose system functions by mistake and will need an option to effortlessly leave the unwanted state without having to go through an extended dialogue. Support undo and redo.</p>
+
+            <p>Example heuristic violations:</p>
+            <ul>
+                <li>Not providing users the ability to stop or cancel a command.</li>
+                <li>Not providing users the ability to redo a command.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row mt-4 justify-content-center" id="CI-H4">
+        <div class="col-lg-8 col-sm-12 col-md-10 mt-4">
+            <p style="font-weight: 500 !important; text-transform: uppercase;">CI-H4. Consistency and standards</p>
+            <p>Users should not have to wonder whether different words, options, or actions mean the same thing. Follow platform conventions for the design of visual and interaction elements. Users should also be able to receive consistent responses even if they communicate the same function in multiple ways (and modalities). Within the interaction, the system should have a consistent voice, style of language, and personality.</p>
+
+            <p>Example heuristic violations:</p>
+            <ul>
+                <li>If the same command is called different things or responds inconsistently at different points of interaction.</li>
+                <li>If the CUI uses different tones and voices throughout (without a clear purpose/explanation).</li>
+             </ul>
+        </div>
+    </div>
+
+    <div class="row mt-4 justify-content-center" id="CI-H5">
+        <div class="col-lg-8 col-sm-12 col-md-10 mt-4">
+            <p style="font-weight: 500 !important; text-transform: uppercase;">CI-H5. Error prevention</p>
+            <p>Even better than good error messages is a careful design of the conversation and interface to reduce the likelihood of a problem from occurring in the first place. Be prepared for pauses, conversation fillers, and interruptions, as well as dialogue failures, deadends or sidetracks. Proactively prevent or eliminate potential error-prone conditions, and check and confirm with users before they commit an action.</p>
+
+            <p>Example heuristic violations:</p>
+            <ul>
+                <li>If the users are provided with an answer set, and they do not have the freedom to choose “none of the above” or to exit out the interaction.</li>
+                <li>In contexts where errors are likely (e.g., a voice-based chatbot where the system is not confident about the user input), if the system does not confirm with users before proceeding.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row mt-4 justify-content-center" id="CI-H6">
+        <div class="col-lg-8 col-sm-12 col-md-10 mt-4">
+            <p style="font-weight: 500 !important; text-transform: uppercase;">CI-H6. Help and guidance</p>
+            <p>The system should guide the user throughout the dialogue by clarifying system capabilities. Help features should be easy to retrieve and search, focused on the user’s task, list concrete steps to be carried out, and not be too large. Make actions and options visible when appropriate.</p>
+
+            <p>Example heuristic violations:</p>
+            <ul>
+                <li>If the CUI’s capabilities are not clear to users.</li>
+                <li>For CUIs with unique interface elements, if the CUI does not explain or have a feature to explain how the interface works.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row mt-4 justify-content-center" id="CI-H7">
+        <div class="col-lg-8 col-sm-12 col-md-10 mt-4">
+            <p style="font-weight: 500 !important; text-transform: uppercase;">CI-H7. Flexibility and efficiency of use</p>
+            <p>Support flexible interactions depending on the use context by providing users with the appropriate (or preferred) input and output modality and hardware. Additionally, provide accelerators, such as command abbreviations, that are unseen by novices but speed up the interactions for experts, to ensure that the system is efficient.</p>
+
+            <p>Example heuristic violations:</p>
+            <ul>
+                <li>For menu/button-based CUIs, if users should be able to select from multiple responses but is restricted to select only one.</li>
+                <li>For voice-based interactions, CUIs should support verbal shortcuts for commands.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row mt-4 justify-content-center" id="CI-H8">
+        <div class="col-lg-8 col-sm-12 col-md-10 mt-4">
+            <p style="font-weight: 500 !important; text-transform: uppercase;">CI-H8. Aesthetic, minimalist and engaging design</p>
+            <p>Dialogues should not contain information which is irrelevant or rarely needed. Provide interactional elements that are necessary to engage the user and fit within the goal of the system. Interfaces should support short interactions and expand on the conversation if the user chooses.</p>
+
+            <p>Example heuristic violations:</p>
+            <ul>
+                <li>If the CUI asks more questions/collects more information than necessary.</li>
+                <li>If the CUI uses too many irrelevant social utterances.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row mt-4 justify-content-center" id="CI-H9">
+        <div class="col-lg-8 col-sm-12 col-md-10 mt-4">
+            <p style="font-weight: 500 !important; text-transform: uppercase;">CI-H9. Help users recognize, diagnose and recover from errors</p>
+            <p>Error messages should be expressed in plain language (no codes), precisely indicate the problem, and constructively suggest a solution.</p>
+
+            <p>Example heuristic violations:</p>
+            <ul>
+                <li>If an error message does not explain the problem.</li>
+                <li>When the users performs an action that is incorrect or that the CUI does not recognize, the CUI does not constructively help guide users to a solution.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row mt-4 justify-content-center" id="CI-H10">
+        <div class="col-lg-8 col-sm-12 col-md-10 mt-4">
+            <p style="font-weight: 500 !important; text-transform: uppercase;">CI-H10. Context preservation</p>
+            <p>Maintain context preservation regarding the conversation topic intra-session, and if possible inter-session. Allow the user to reference past messages for further interactions to support implicit user expectations of conversations.</p>
+
+            <p>Example heuristic violations:</p>
+            <ul>
+                <li>If the CUI does not retain a memory of the users previous responses/interactions within the same session (ideally across sessions).</li>
+                <li>If the CUI turns off or “sleeps” too quickly, where the user needs to restart the session from the beginning.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row mt-4 justify-content-center" id="CI-H11">
+        <div class="col-lg-8 col-sm-12 col-md-10 mt-4">
+            <p style="font-weight: 500 !important; text-transform: uppercase;">CI-H11. Trustworthiness</p>
+            <p>The system should convey trustworthiness by ensuring privacy of user data, and by being transparent and truthful with the user. The system should not falsely claim to be human.</p>
+
+            <p>Example heuristic violations:</p>
+            <ul>
+                <li>If the CUI claims to be a human.</li>
+                <li>If the CUI is not explicit or does not provide a clear feature for users to explore how the data will be stored and used.</li>
+            </ul>
+        </div>
+    </div>
+</div>
