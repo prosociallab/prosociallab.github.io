@@ -146,3 +146,9 @@ h4 {
 	    padding: 2rem .3rem !important;
     }
 }
+
+.logo {
+	width: 17px;
+	height: 17px;
+	margin: 0 4px 3px 2px;
+  }
