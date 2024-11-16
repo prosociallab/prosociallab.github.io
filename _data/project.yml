@@ -1,0 +1,13 @@
+project:
+  - title: "Transforming HCI papers into design cards with generative AI"
+    image: "paper2card.jpg"
+    venue: CHI '24
+  - title: "AI-infused plugin for assisting designers in creating causal pathway diagrams"
+    image: "cpd.jpg"
+    venue: CHI '24
+  - title: "AI chatbot for assisting ad hoc teamworks"
+    image: "introbot.jpg"
+    venue: CHI '23
+  - title: "Understanding the use of design cards"
+    image: "design_card.jpg"
+    venue: CHI '23

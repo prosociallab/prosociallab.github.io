@@ -1,5 +1,5 @@
 
-@import 'fontawesome';
+@import '../fonts/fontawesome';
 
 :root {
 	font-family: 'Barlow', Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
@@ -27,6 +27,11 @@ body {
 	font-family: 'Barlow', 'Noto Sans KR' !important;
 	font-weight: 300
 }
+
+.paragraph {
+	font-weight: 300 !important;
+	font-size: .95rem;
+}
 .page-content {
 	padding: 0 10rem !important;
 }
@@ -42,8 +47,7 @@ footer {
 }
 
 ::selection {
-	color: #000;
-	background: #fff1a3;
+	background: #e7cade !important;
 }
 
 a {
@@ -96,7 +100,7 @@ h4 {
 }
 
 .nav-link {
-    text-transform: uppercase;
+	font-size: .95rem !important;
     letter-spacing: .75px;
 	color: black !important;
 }
