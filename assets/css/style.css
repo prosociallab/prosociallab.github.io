@@ -32,13 +32,9 @@ body {
 	font-weight: 300 !important;
 	font-size: .95rem;
 }
-.page-content {
-	padding: 0 10rem !important;
-}
 footer {
     background-color: #9B2F7A;
     color: white;
-	padding: 2rem 10rem !important;
     margin-top: 2rem;
 }
 ::-moz-selection {
@@ -115,37 +111,73 @@ h4 {
 	outline: none !important;
 	padding: 0 !important
   }
-@media screen and (max-width: 575px) {
-	.padding-row {
-		padding-top: 1rem !important;
-	}
-}
+  
 
-@media screen and (max-width: 1200px) {
-	.page-content {
-		padding: 0 5rem !important;
+@media screen and (min-width: 1601px) {
+	main, header {
+	  max-width: 1500px !important;
+	  margin-left: auto;
+	  margin-right: auto;
 	}
-    footer {
-	    padding: 2rem 5rem !important;
-    }
-}
-@media screen and (max-width: 991px) {
-	.page-content {
-		padding: 0 1rem !important;
+  
+	.footer-inner {
+	  max-width: 1500px !important;
+	  padding: 3rem 0 5rem 0 !important;
+	  margin-left: auto;
+	  margin-right: auto;
 	}
-    footer {
-	    padding: 2rem 1rem !important;
-    }
-}
-
-@media screen and (max-width: 575px) {
-	.page-content {
-		padding: 0 .3rem !important;
+  }
+  
+  
+  @media screen and (max-width: 1600px) {
+	main, header {
+	  padding: 0 15rem !important;
 	}
-    footer {
-	    padding: 2rem .3rem !important;
-    }
-}
+  
+	.footer-inner {
+	  padding: 3rem 15rem !important;
+	}
+  }
+  
+  @media screen and (max-width: 1440px) {
+	main, header {
+	  padding: 0 10rem !important;
+	}
+  
+	.footer-inner {
+	  padding: 2rem 10rem !important;
+	}
+  }
+  
+  @media screen and (max-width: 1200px) {
+	main, header {
+	  padding: 0 4rem !important;
+	}
+  
+	.footer-inner {
+	  padding: 2rem 4rem !important;
+	}
+  }
+  
+  @media screen and (max-width: 991px) {
+	main, header {
+	  padding: 0 1rem !important;
+	}
+  
+	.footer-inner {
+	  padding: 2rem 1rem !important;
+	}
+  }
+  
+  @media screen and (max-width: 575px) {
+	main, header {
+	  padding: 0 .3rem !important;
+	}
+  
+	.footer-inner {
+	  padding: 2rem .3rem !important;
+	}
+  }
 
 .logo {
 	width: 17px;

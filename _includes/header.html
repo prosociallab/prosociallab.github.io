@@ -10,6 +10,9 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <ul class="navbar-nav ml-auto navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <li class="nav-item">
+            <a class="nav-link {% if page.url == '/' %} active {% endif %}" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link {% if page.url contains 'research' %} active {% endif %}" aria-current="page" href="/research">Research area</a>
           </li>
           <li class="nav-item">
@@ -17,9 +20,6 @@
           </li>
           <li class="nav-item">
             <a class="nav-link {% if page.url contains 'publication' %} active {% endif %}" aria-current="page" href="/publication">Publication</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {% if page.url contains 'news' %} active {% endif %}" aria-current="page" href="/news">News</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {% if page.url contains 'people' %} active {% endif %}" aria-current="page" href="/people">People</a>
