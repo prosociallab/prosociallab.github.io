@@ -2,7 +2,7 @@ project:
   - title: "Transforming HCI papers into design cards with generative AI"
     image: "paper2card.jpg"
     venue: CHI '24
-  - title: "AI-infused plugin for assisting designers in creating causal pathway diagrams"
+  - title: "AI-assisted causal diagramming for human-centered design"
     image: "cpd.jpg"
     venue: CHI '24
   - title: "AI chatbot for assisting ad hoc teamworks"
@@ -11,3 +11,9 @@ project:
   - title: "Understanding the use of design cards"
     image: "design_card.jpg"
     venue: CHI '23
+  - title: "Science communication in HCI"
+    image: "science_communication.jpg"
+    venue: CSCW '22
+  - title: "Heuristic evaluation of conversational agents"
+    image: "heuristic_evaluation.jpg"
+    venue: CHI '21

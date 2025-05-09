@@ -53,6 +53,23 @@ title: Publication
   .publication-year:first {
     padding-top: 0 !important
   }
+
+  /* Spinner */
+  #loading-spinner {
+    text-align: center;
+  }
+  .spinner-border {
+    width: 2rem;
+    height: 2rem;
+    border: 0.25em solid #ccc;
+    border-top-color: #9B2F7A;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    display: inline-block;
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
 </style>
 
 <div class="container py-4">
@@ -70,10 +87,15 @@ title: Publication
 
     <label style="font-size: .95rem !important; cursor: pointer" for="tag-all" class="tag-label tag-all" id="label-all">All</label>
     {% for cat in category.types %}
-    <label style="font-size: .95rem !important; cursor: pointer" for="tag-{{ cat | replace: ' ', '' }}" class="ml-3 tag-label tag-{{ cat | replace: ' ', '' }}" id="label-{{ cat | replace: ' ', '' }}">{{ cat }}</label>
+    <label style="font-size: .95rem !important; cursor: pointer" for="tag-{{ cat | replace: ' ', '' }}" class="ms-3 tag-label tag-{{ cat | replace: ' ', '' }}" id="label-{{ cat | replace: ' ', '' }}">{{ cat }}</label>
     {% endfor %}
 
-    <div class="row mt-4" style="flex: 0 0 100%;" id="publications">
+
+    <div class="row justify-content-center mt-4" style="flex: 0 0 100%;" id="publications">
+      <div id="loading-spinner" class="text-center my-5">
+        <div class="spinner-border" role="status"></div>
+        <div class="loading-text" style="margin-top: 0.5rem;">Loading...</div>
+      </div>
       <!-- JavaScript will inject items here -->
     </div>
   </div>
@@ -82,33 +104,28 @@ title: Publication
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
 <script>
   async function fetchPublications() {
+  const spinner = document.getElementById("loading-spinner");
+  const container = document.getElementById("publications");
+
+  try {
+    spinner.style.display = "block";  // Show spinner
+
     const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRp7c-CvHjVhOEVjA3Dp9YPOpIZIlADn6K66pcwhIiQKUDUShi9CcXE-JO6RNNPCL8u8MX1OR1r-RqV/pub?gid=0&single=true&output=csv";
     const response = await fetch(csvUrl);
     const csvText = await response.text();
-    // Changed header: true to header: false to access by index
     const data = Papa.parse(csvText, { header: false }).data;
 
-    const container = document.getElementById("publications");
+    const publicationsData = data.slice(1); // Skip header
 
-    // Remove header row if present (assuming the first row is header)
-    // You might need to adjust this based on your CSV structure
-    const publicationsData = data.slice(1); // Skip the first row (headers)
-
-    // Group publications by year (Year is now at index 0)
     const groupedByYear = publicationsData.reduce((acc, pub) => {
-      // Access year by index 0
       const year = pub[0] || "Unknown Year";
-      if (!acc[year]) {
-        acc[year] = [];
-      }
+      if (!acc[year]) acc[year] = [];
       acc[year].push(pub);
       return acc;
     }, {});
 
-    // Sort years in descending order
     const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
 
-    // Generate HTML for each year and its publications
     sortedYears.forEach(year => {
       const yearDiv = document.createElement("div");
       yearDiv.className = "col-12 px-0";
@@ -118,13 +135,8 @@ title: Publication
       const publications = groupedByYear[year];
       publications.forEach((pub, index) => {
         const div = document.createElement("div");
-        // Access Category by index 6
-        const categories = (pub[6] || "")
-          .split(",")
-          .map(c => `tag-${c.trim().replace(/\s/g, "")}`)
-          .join(" ");
+        const categories = (pub[6] || "").split(",").map(c => `tag-${c.trim().replace(/\s/g, "")}`).join(" ");
         div.className = `item col-12 px-0 ${categories}`;
-
         div.innerHTML = `
           <p class="mb-1" style="font-size: 1rem; font-weight: 400 !important;">${pub[1] || ''}</p>
           <p class="mb-1" style="font-size: .95rem; font-weight: 200 !important;">${pub[2] || ''}</p>
@@ -137,16 +149,19 @@ title: Publication
           </p>
           <hr>
         `;
-
-        // Add class to last item of the year
         if (index === publications.length - 1) {
           div.querySelector('hr').classList.add('no-border');
         }
-
         container.appendChild(div);
       });
     });
+
+  } catch (error) {
+    console.error("Failed to load publications:", error);
+  } finally {
+    spinner.style.display = "none";  // Hide spinner
   }
+}
 
   document.addEventListener("DOMContentLoaded", fetchPublications);
 </script>
