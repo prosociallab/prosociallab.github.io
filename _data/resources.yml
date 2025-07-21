@@ -16,4 +16,4 @@ resource:
     description: "Academic papers are hard to read. But they often contain valuable insights that can help with many aspects of design. Harnessing the power of generative AI, we developed a tool that can help designers take any academic paper and translate it into more usable/understandable content in the form of design cards."
     category: "CAs"
     project_path: "Paper2Card"
-    image: "BCDS_small.jpg"
+    image: "example_card.jpg"
