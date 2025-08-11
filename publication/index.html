@@ -16,9 +16,14 @@ title: Publication
   {% endfor %}
   #tag-all:checked ~ .tag-label#label-all {
     text-decoration: underline;
-    font-weight: 500;
+    font-weight: 300 !important;
   }
-
+  .tag-label {
+    font-weight: 300 !important;
+  }
+  .tag-label:hover {
+    font-weight: 400 !important;
+  }
   {% for type in category.types %}
   #tag-all:checked ~ #publications > .item:not(.item) {
     display: none !important;
@@ -85,9 +90,9 @@ title: Publication
     <input type="radio" name="tag" id="tag-{{ cat | replace: ' ', '' }}" aria-labelledby="tag-{{ cat | replace: ' ', '' }}">
     {% endfor %}
 
-    <label style="font-size: .95rem !important; cursor: pointer" for="tag-all" class="tag-label tag-all" id="label-all">All</label>
+    <label style="font-size: .9rem !important; cursor: pointer" for="tag-all" class="tag-label tag-all" id="label-all">All</label>
     {% for cat in category.types %}
-    <label style="font-size: .95rem !important; cursor: pointer" for="tag-{{ cat | replace: ' ', '' }}" class="ms-3 tag-label tag-{{ cat | replace: ' ', '' }}" id="label-{{ cat | replace: ' ', '' }}">{{ cat }}</label>
+    <label style="font-size: .9rem !important; cursor: pointer" for="tag-{{ cat | replace: ' ', '' }}" class="ms-3 tag-label tag-{{ cat | replace: ' ', '' }}" id="label-{{ cat | replace: ' ', '' }}">{{ cat }}</label>
     {% endfor %}
 
 
@@ -129,7 +134,7 @@ title: Publication
     sortedYears.forEach(year => {
       const yearDiv = document.createElement("div");
       yearDiv.className = "col-12 px-0";
-      yearDiv.innerHTML = `<p class="publication-year pt-4 pb-2" style="font-size: .95rem; font-weight: 400;">${year}</p>`;
+      yearDiv.innerHTML = `<p class="publication-year pt-4 pb-2" style="font-size: .9rem; font-weight: 400;">${year}</p>`;
       container.appendChild(yearDiv);
 
       const publications = groupedByYear[year];
@@ -138,10 +143,10 @@ title: Publication
         const categories = (pub[6] || "").split(",").map(c => `tag-${c.trim().replace(/\s/g, "")}`).join(" ");
         div.className = `item col-12 px-0 ${categories}`;
         div.innerHTML = `
-          <p class="mb-1" style="font-size: 1rem; font-weight: 400 !important;">${pub[1] || ''}</p>
-          <p class="mb-1" style="font-size: .95rem; font-weight: 200 !important;">${pub[2] || ''}</p>
-          <p class="mb-2" style="font-size: .95rem; font-weight: 300 !important;">${pub[3] || ''}${pub[4] ? `: ${pub[4]}` : ''}</p>
-          ${pub[7] ? `<p class="mb-1" style="font-size: .95rem; font-weight: 300 !important;"><i class="fa-solid fa-medal"></i>&nbsp;&nbsp;${pub[7]}</p>` : ''}
+          <p class="mb-1" style="font-size: .9rem; font-weight: 400 !important;">${pub[1] || ''}</p>
+          <p class="mb-1" style="font-size: .9rem; font-weight: 200 !important;">${pub[2] || ''}</p>
+          <p class="mb-2" style="font-size: .9rem; font-weight: 300 !important;">${pub[3] || ''}${pub[4] ? `: ${pub[4]}` : ''}</p>
+          ${pub[7] ? `<p class="mb-1" style="font-size: .9rem; font-weight: 300 !important;"><i class="fa-solid fa-medal"></i>&nbsp;&nbsp;${pub[7]}</p>` : ''}
           <p style="font-size: .9rem; font-weight: 300 !important;">
             ${pub[5] ? `<a href="/assets/pdf/publications/${pub[5]}"><i class="fa-solid fa-file"></i>&nbsp;&nbsp;PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;` : ''}
             ${pub[8] ? `<a href="${pub[8]}"><i class="fa-solid fa-play"></i>&nbsp;&nbsp;Video</a>&nbsp;&nbsp;&nbsp;&nbsp;` : ''}

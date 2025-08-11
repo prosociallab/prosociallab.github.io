@@ -10,13 +10,13 @@ title: UW Prosocial Computing Group
 <div class="container py-3">
     <div class="row">
         <div class="col-12 col-sm-5 col-lg-4 col-xl-4 align-self-center pt-0 pt-md-4 mb-4 mb-md-0">
-            <img src="{{ '/assets/images/main/group_photo.jpg' | relative_url }}" alt="" style="height: auto; width: 100%; border-radius: 15px;">
-            <p class="mt-2" style="font-size: 0.9rem; font-weight: 400 !important; text-align: center;">Prosocial @ Lab outing 2025</p>
+            <img src="{{ '/assets/images/main/group_photo.jpg' | relative_url }}" alt="" style="height: auto; width: 100%; border-radius: 5px;">
+            <p class="mt-2" style="font-size: 0.8rem; font-weight: 300 !important; text-align: center;">Prosocial @ Lab outing 2025</p>
         </div>
         <div class="col-12 col-sm-7 col-lg-8 col-xl-8 align-self-center">
             <p class="paragraph">Prosocial computing group at the <a href="https://uw.edu"><img class="logo" src="{{ 'assets/images/logo/uw.svg' | relative_url }}"/>University of Washington</a> studies, designs, and builds technologies that foster and support positive and prosocial behaviors – to benefit individuals and society as a whole.</p>
             <p class="paragraph">We use theories from psychology, communication, and economics to inform our application of generative AI, aimed at understanding and fostering prosocial behavior across diverse research domains. Through our work, we seek to contribute to our fundamental understanding of people, as well as develop design guidelines and tools to facilitate technology design.</p>
-            <p class="paragraph">Our works have been supported by Google, Microsoft, National Science Foundation, National Institute of Health, and Center for Disease Control and Prevention</p>
+            <p class="paragraph">Our works have been supported by Microsoft, Google, National Science Foundation, National Institute of Health, Center for Disease Control and Prevention, Fulbright, Nokia, Intel, UW ALACRITY Center, and Institute of Translational Health Sciences.</p>
         </div>
     </div>
 </div>
@@ -27,13 +27,13 @@ title: UW Prosocial Computing Group
             {% for project in projects %}
 			<div class="paper-container non-select">
                 <img src="{{ '/assets/images/project/' | append: project.image | relative_url }}" alt="" style="height: auto; width: 100%;">
-                <p class="pt-2 mt-md-2" style="font-size: .9rem; font-weight: 400 !important; line-height: 1.1rem; text-align: center;">{{ project.title }}{% if project.venue %}<span class="project-venue">{{ project.venue }}</span>{% endif %}</p>
+                <p class="pt-2 mt-md-2" style="font-size: .8rem; font-weight: 300 !important; line-height: 1.05rem; text-align: center;">{{ project.title }}{% if project.venue %}<span class="project-venue">{{ project.venue }}</span>{% endif %}</p>
 			</div>
             {% endfor %}
 		</div>
 	</div>
     <div class="d-flex flex-row-reverse mt-4">
-        <a href="{{ 'publication' | relative_url }}" style="font-size: .95rem; font-weight: 500 !important;">> View All</a>
+        <a href="{{ 'publication' | relative_url }}" style="font-size: .9rem;">> View All</a>
     </div>
 </div>
 <!--
@@ -58,15 +58,15 @@ title: UW Prosocial Computing Group
         {% for new in news limit: 4 %}
         <div class="col-12 col-sm-3 px-2">
             <div class="border p-3 mb-2 md-mb-0">
-                <p class="mb-1" style="font-size: .9rem; font-weight: 400 !important; line-height: 1.3">{{ new.title }}</p>
-                <p class="mb-2" style="font-size: .8rem; font-weight: 200 !important;">{{ new.date | date: "%b %-d, %Y" }}</p>
-                <p style="font-size: .9rem; font-weight: 300 !important; line-height: 1.3">{{ new.description }}</p>
+                <p class="mb-1" style="font-size: .85rem; font-weight: 400 !important;">{{ new.title }}</p>
+                <p class="mb-2" style="font-size: .75rem; font-weight: 200 !important;">{{ new.date | date: "%b %-d, %Y" }}</p>
+                <p style="font-size: .8rem; font-weight: 300 !important;">{{ new.description }}</p>
             </div>
         </div>
         {% endfor %}
     </div>
     <div class="d-flex flex-row-reverse mt-4">
-        <a href="{{ 'news' | relative_url }}" style="font-size: .95rem; font-weight: 500 !important;">> View All</a>
+        <a href="{{ 'news' | relative_url }}" style="font-size: .9rem;">> View All</a>
     </div>
 </div>
 

@@ -5,7 +5,7 @@ title: People
 ---
 
 {% assign counter = 0 %}
-{% assign color = '#9B2F7A, #379DD4, #61BA84, #E1B917' | split: ', ' %}
+{% assign color = '#E1B917, #61BA84, #379DD4, #9B2F7A' | split: ', ' %}
 
 <div class="container pt-4">
     {% for group in site.data.people.people %}
@@ -21,7 +21,7 @@ title: People
                     {% endif %}
                     {% assign idx = counter | modulo: 4 %}
                     <div class="mb-3" style="{{ color[idx] | prepend: 'background-color: ' }}">
-                        <p style="font-size: 1rem; font-weight: 500 !important; padding: .5rem .5rem 0 .75rem; margin: 0 !important; text-align: left; color: white;">{{ person.name }}</p>
+                        <p style="font-size: .8rem; font-weight: 400 !important; padding: .5rem .3rem 0 .55rem; margin: 0 !important; text-align: left; color: white;">{{ person.name }}</p>
                         {% assign email = person.email | split: "@" %}
                         <a href="#" class="cryptedmail"
                             data-name="{{ email[0] }}"
@@ -37,22 +37,22 @@ title: People
     {% endfor %}
 </div>
 <div class="container pb-4">
-    <p style="font-size: 1.1rem; font-weight: 500 !important">ALUMNI</p>
+    <p style="font-size: 1..9rem; font-weight: 500 !important">ALUMNI</p>
     {% for group in site.data.alumni.alumni %}
-    <p class="mt-3 mb-1" style="font-size: 1rem; font-weight: 500 !important">{{ group.type }}</p>
+    <p class="mt-3 mb-1" style="font-size: .9rem; font-weight: 400 !important">{{ group.type }}</p>
     {% assign people = group.list | sort: "member_since" %}
     <div class="mb-4">
         {% for person in people %}
         <div class="row">
             <div class="col-4 col-sm-2 align-self-center">
                 {% if person.website %}
-                <a class="mt-1" style="font-size: 1rem; font-weight: 300;" href="{{ person.website }}">{{ person.name }}</a>
+                <a class="mt-1" style="font-size: .9rem; font-weight: 300;" href="{{ person.website }}">{{ person.name }}</a>
                 {% else %}
-                <p class="mt-1" style="font-size: 1rem; font-weight: 300;">{{ person.name }}</p>
+                <p class="mt-1" style="font-size: .9rem; font-weight: 300;">{{ person.name }}</p>
                 {% endif %}
             </div>
             <div class="col-8 col-sm-10 align-self-center">
-                <p class="mt-1" style="font-size: 1rem; font-weight: 300;">now {{ person.role }} at {{ person.affiliation }}</p>
+                <p class="mt-1" style="font-size: .9rem; font-weight: 200;">now {{ person.role }} at {{ person.affiliation }}</p>
             </div>
         </div>
         {% endfor %}
@@ -63,8 +63,8 @@ title: People
 <style>
     .cryptedmail {
         font-size: .8rem;
-        font-weight: 100 !important;
-        padding: 0 .5rem .75rem .75rem !important;
+        font-weight: 250 !important;
+        padding: 0 .3rem .55rem .55rem !important;
         margin: 0 !important;
         color: white !important;
         display:inline-block;

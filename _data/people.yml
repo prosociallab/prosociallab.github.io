@@ -8,6 +8,11 @@ people:
         member_since: 2017
   - type: "Ph.D. Students"
     list:
+      - name: Meziah Ruby Cristobal
+        website: http://meziahruby.me/
+        email: meziah@uw.edu
+        image: meziah.jpg
+        member_since: 2025
       - name: Hyeonjeong Byeon
         website: https://www.linkedin.com/in/hyeonjeong-byeon/
         email: hjbyeon@uw.edu
